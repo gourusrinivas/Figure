@@ -11,16 +11,17 @@ for filename in os.listdir(path):
             os.remove(os.path.join(path, filename))
             
 import os
-import zipfile
+from pathlib import Path
+from zipfile import ZipFile
+DOWNLOAD_DIR = Path("D:\file")
+ZIPPED_FILE_DIR = Path("D:\file")
+def get_list_of_all_folders(download_dir: Path):
+    return [f for f in download_dir.iterdir() if download_dir.is_dir()]
+def zip_files():
+    folder_list = get_list_of_all_folders(DOWNLOAD_DIR)
+    with ZipFile(ZIPPED_FILE_DIR / "Other.zip", "w") as zip:
+        # writing each file one by one
+        for folder in folder_list:
+            zip.write(folder)
+zip_files()
 
-def zipdir(path, ziph):
-# ziph is zipfile handle
-for root, dirs, files in os.walk(path):
-for file in files:
-ziph.write(os.path.join(root, file),
-os.path.relpath(os.path.join(root, file),
-os.path.join(path, '..')))
-
-zipf = zipfile.ZipFile('Other.zip', 'w', zipfile.ZIP_DEFLATED)
-zipdir('tmp/', zipf)
-zipf.close()
