@@ -9,6 +9,6 @@ for filename in os.listdir(path):
         if os.path.isfile(os.path.join(path, filename)):
             
             os.remove(os.path.join(path, filename))
-   print(filename)
+    print(filename)
 
 
