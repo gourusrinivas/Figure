@@ -9,7 +9,7 @@ for filename in os.listdir(path):
         if os.path.isfile(os.path.join(path, filename)):
             
             os.remove(os.path.join(path, filename))
-    print(filename)
+    print()
 for dirpath,dirnames,filenames in os.walk(path):
     print("Current path", dirpath)
     print("Current directories", dirnames)
