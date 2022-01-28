@@ -9,8 +9,6 @@ for filename in os.listdir(path):
         if os.path.isfile(os.path.join(path, filename)):
             print()
             os.remove(os.path.join(path, filename))
+print((file)     
             
-path = "D:\file"
-dir_list = os.listdir(path)
-print("Recent files", path)
-print(dir_list)
+       
