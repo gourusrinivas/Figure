@@ -10,3 +10,7 @@ for filename in os.listdir(path):
             
             os.remove(os.path.join(path, filename))
     print(filename)
+for dirpath,dirnames,filenames in os.walk(path):
+    print("Current path", dirpath)
+    print("Current directories", dirnames)
+    print("The new files are", filenames)
