@@ -30,6 +30,6 @@ def zip_files():
         for folder in folder_list:
             zip.write(folder)
            
-zip_fils()
+zip_files()
             
             
