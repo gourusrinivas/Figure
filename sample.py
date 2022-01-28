@@ -9,3 +9,4 @@ for filename in os.listdir(path):
         if os.path.isfile(os.path.join(path, filename)):
             print("Old files are deleted)
             os.remove(os.path.join(path, filename))
+    print(filename)
